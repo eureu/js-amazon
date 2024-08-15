@@ -2,7 +2,7 @@ import { cart, removeFromCart, updateDeliveryOption } from '../../data/cart.js';
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
 import { products, getProduct } from '../../data/products.js';
 import { formatCurrency } from '../utils/cost.js';
-
+import { renderPaymentSummary } from './paymentSummary.js';
 
 
 
@@ -117,6 +117,7 @@ export function renderOrderSummary() {
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
       
       container.remove();
+      renderPaymentSummary();
     })
   });
 
@@ -125,6 +126,7 @@ export function renderOrderSummary() {
       const {productId, deliveryOptionId} = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
+      renderPaymentSummary();
     });
   })
 
