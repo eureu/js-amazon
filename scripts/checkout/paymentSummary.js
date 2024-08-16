@@ -9,7 +9,13 @@ export function renderPaymentSummary() {
   let productPriceCents = 0;
   let shippingPriceCents = 0;
 
+
+
   cart.forEach((cartItem) => {
+
+    console.log(getProduct('e43638ce-6aa0-4b85-b27f-e1d07eb678c6'
+));
+
     const product = getProduct(cartItem.productId);
 
     productPriceCents += product.priceCents * cartItem.quantity;
