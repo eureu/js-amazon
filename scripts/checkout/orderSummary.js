@@ -1,8 +1,8 @@
 import { cart, removeFromCart, updateDeliveryOption } from '../../data/cart.js';
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
 import { products, getProduct } from '../../data/products.js';
-import { formatCurrency } from '../utils/cost.js';
-import { renderPaymentSummary } from './paymentSummary.js';
+import formatCurrency from '../utils/cost.js';
+import {renderPaymentSummary} from './paymentSummary.js';
 
 
 
