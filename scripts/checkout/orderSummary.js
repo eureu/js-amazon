@@ -9,8 +9,11 @@ import {renderPaymentSummary} from './paymentSummary.js';
 export function renderOrderSummary() {
   let cartSummaryHTML = '';
 
+
+
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
+
     const matchingProduct = getProduct(productId);
 
     
@@ -26,6 +29,8 @@ export function renderOrderSummary() {
     const dateString = deliveryDate.format(
       'dddd, MMMM D'
     );
+
+
 
     cartSummaryHTML +=`<div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
         <div class="delivery-date">
@@ -129,5 +134,4 @@ export function renderOrderSummary() {
       renderPaymentSummary();
     });
   })
-
 }
